@@ -35,6 +35,7 @@ abstract class RingBufferFields<E> extends RingBufferPad
 
     static
     {
+        // 获取数组的转换因子
         final int scale = UNSAFE.arrayIndexScale(Object[].class);
         if (4 == scale)
         {
@@ -75,7 +76,9 @@ abstract class RingBufferFields<E> extends RingBufferPad
         }
 
         this.indexMask = bufferSize - 1;
+        //初始化数组
         this.entries = new Object[sequencer.getBufferSize() + 2 * BUFFER_PAD];
+        //填充event
         fill(eventFactory);
     }
 

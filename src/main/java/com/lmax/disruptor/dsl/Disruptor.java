@@ -134,7 +134,9 @@ public class Disruptor<T>
             final WaitStrategy waitStrategy)
     {
         this(
+            //创建ringbuffer
             RingBuffer.create(producerType, eventFactory, ringBufferSize, waitStrategy),
+            //基础线程池
             new BasicExecutor(threadFactory));
     }
 
