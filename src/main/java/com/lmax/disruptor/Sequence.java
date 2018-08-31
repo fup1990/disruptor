@@ -27,6 +27,7 @@ class LhsPadding
 
 class Value extends LhsPadding
 {
+    //填充缓存行
     protected volatile long value;
 }
 

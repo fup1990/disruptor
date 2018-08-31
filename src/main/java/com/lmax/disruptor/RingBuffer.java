@@ -213,9 +213,9 @@ public final class RingBuffer<E> extends RingBufferFields<E> implements Cursored
     {
         switch (producerType)
         {
-            case SINGLE:
+            case SINGLE:    //一个生产者
                 return createSingleProducer(factory, bufferSize, waitStrategy);
-            case MULTI:
+            case MULTI:     //多个生产者
                 return createMultiProducer(factory, bufferSize, waitStrategy);
             default:
                 throw new IllegalStateException(producerType.toString());
